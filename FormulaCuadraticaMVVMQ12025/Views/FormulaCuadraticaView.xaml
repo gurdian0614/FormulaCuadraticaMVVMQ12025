@@ -2,22 +2,26 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FormulaCuadraticaMVVMQ12025.Views.FormulaCuadraticaView"
-             xmlns:viewModel="clr-namespace:FormulaCuadraticaMVVMQ12025.ViewModels"
-             x:DataType="viewModel:FormulaCuadraticaViewModel"
              Title="FormulaCuadraticaView">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="5">
             <Label Text="Ingrese valor de a:" />
-            <Entry Text="" Keyboard="Numeric" />
+            <Entry Text="{Binding A}" Keyboard="Numeric" />
 
             <Label Text="Ingrese valor de b:" />
-            <Entry Text="" Keyboard="Numeric" />
+            <Entry Text="{Binding B}" Keyboard="Numeric" />
 
             <Label Text="Ingrese valor de c:" />
-            <Entry Text="" Keyboard="Numeric" />
+            <Entry Text="{Binding C}" Keyboard="Numeric" />
 
-            <Button Text="Calcular" Background="Green" />
-            <Button Text="Limpiar" Background="Red" />
+            <Label Text="x1:" />
+            <Entry Text="{Binding X1}" IsReadOnly="True" />
+
+            <Label Text="x2:" />
+            <Entry Text="{Binding X2}" IsReadOnly="True" />
+
+            <Button Text="Calcular" Background="Green" Command="{Binding CalcularCommand}" />
+            <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
